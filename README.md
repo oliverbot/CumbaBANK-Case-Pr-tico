@@ -10,10 +10,10 @@ Eu decidi fazer esse projeto em Elixir utilizando o framework web Phoenix. Apesa
 ---
 ```bash
 # Primeiramente, clone o repositório.
-$ git clone ~
+$ git clone https://github.com/oliverbot/CumbaBANK-Case-Pr-tico.git
 
 # Entre na pasta do projeto.
-$ cd cumbabank
+$ cd CumbaBANK-Case-Pr-tico
 
 # Instale as dependências.
 $ mix depts.get
