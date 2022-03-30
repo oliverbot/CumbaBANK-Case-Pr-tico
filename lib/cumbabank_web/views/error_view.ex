@@ -18,5 +18,9 @@ defmodule CumbabankWeb.ErrorView do
     %{errors: %{message: dgettext("errors", "Invalid user or password")}}
   end
 
+  def render("unauthenticated.json", _assigns) do
+    %{errors: %{message: dgettext("errors", "unauthenticated")}}
+  end
+
 
 end

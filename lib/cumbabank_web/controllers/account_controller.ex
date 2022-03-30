@@ -2,8 +2,11 @@ defmodule CumbabankWeb.AccountController do
   use CumbabankWeb, :controller
 
   alias Cumbabank.Bank.Account
+  alias Cumbabank.Bank.User
   alias Cumbabank.Bank
   alias Cumbabank.Auth
+
+  alias CumbabankWeb.ErrorView
 
   action_fallback CumbabankWeb.FallbackController
 
@@ -13,12 +16,19 @@ defmodule CumbabankWeb.AccountController do
   end
 
   def get_current_balance(conn, params) do
-    conn_user = Auth.Plug.current_resource(conn, key: :user)
-    account = Account.get_account_by_user_id(conn_user.id)
+    with %User{} = user <- Auth.Plug.current_resource(conn, key: :user) do
+      account = Account.get_account_by_user_id(user.id)
 
-    conn
-    |> put_status(:ok)
-    |> render("balance.json", %{account: account})
+      conn
+      |> put_status(:ok)
+      |> render("balance.json", %{account: account})
+    else
+      {:error, _reason} ->
+        conn
+        |> put_view(ErrorView)
+        |> render("unauthenticated.json")
+    end
+
   end
 
   def create(conn, %{"account" => account_params}) do
