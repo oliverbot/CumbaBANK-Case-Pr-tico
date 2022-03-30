@@ -58,8 +58,8 @@ REQUEST BODY:
 }
 ```
 
-##### // Cadastro de transação //
-`POST /api/transaction`
+##### // Cadastro de transação // 
+`POST /api/transaction` ***Necessário autenticação***
 Realiza operações no saldo das contas envolvidas na transação e cadastra ela no banco.
 
 REQUEST BODY:
@@ -73,12 +73,12 @@ REQUEST BODY:
 }
 ```
 
-##### // Visualização de saldo //
-`GET /api/getBalance`
+##### // Visualização de saldo // 
+`GET /api/getBalance` ***Necessário autenticação***
 Retorna o saldo atual do usuário logado.
 
-##### // Busca de transações por data //
-`GET /api/transactions/:initial_date/to/:end_date`
+##### // Busca de transações por data // 
+`GET /api/transactions/:initial_date/to/:end_date` ***Necessário autenticação***
 Retorna as transações realizadas entre duas datas específicas.
 
 REQUEST PARAMS:
