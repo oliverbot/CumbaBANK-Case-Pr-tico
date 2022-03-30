@@ -16,7 +16,7 @@ $ git clone https://github.com/oliverbot/CumbaBANK-Case-Pr-tico.git
 $ cd CumbaBANK-Case-Pr-tico
 
 # Instale as dependências.
-$ mix depts.get
+$ mix deps.get
 
 # Configure o banco de dados e rode o seguinte comando.
 $ mix ecto.setup
