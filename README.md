@@ -20,6 +20,7 @@ $ mix deps.get
 
 # Configure o banco de dados e rode o seguinte comando.
 $ mix ecto.setup
+$ mix ecto.migrate
 
 # Inicie o servidor.
 $ mix phx.server
